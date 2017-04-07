@@ -1,0 +1,90 @@
+发信人: yuxrose (鱼香肉丝), 信区: JobHunting
+标  题: L家的高频题merge k sorted arrays giving iterators求讨论！
+发信站: BBS 未名空间站 (Sun Mar 15 16:52:41 2015, 美东)
+
+interface是这个 Iterable<Integer> mergeKSortedIterators(Iterators[] iters)
+也就是给每个array的iterator,然后merge.
+我开始想的是用merge k sorted list的办法，用一个heap保存所有的iterator,看哪个
+iterator的头个element最小,push to result，然后Move to next element。
+需要一个iterator的comparator来sort iterators,　是我的comparator写的不对？还
+是heap的operation错了？
+不知有人做过这题吗，希望给点建议。。。。
+
+public static class iteratorComp implements Comparator<Iterator<Integer>>{
+        public int compare(Iterator<Integer> a, Iterator<Integer> b){
+            int a1 = 0;
+            int b1 = 0;
+            if(a.hasNext()){
+                a1 = a.next();
+            }
+            if(b.hasNext()){
+                b1 = b.next();
+            }
+            return a1 - b1;
+        }
+    }
+////////////////////////
+/*iterator直接比的话，比较一次之后next的值就丢失了。 可以创建一个新的数据结构
+， 包含iterator和当前的值。
+
+public class IterWrapper{
+    int currentVal;
+    Iterator<Integer> iter;
+}
+
+Comparator比较currentVal的大小。初始化的时候对每个iterator取next，然后放进
+priorityQueue或者heap。
+每次IterWrapper被poll之后，更新currentVal的值再放回去就好了。*/
+
+import java.util.AbstractList;
+import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class User {
+    public Iterable<Integer> mergeKSortedIterators(List<Iterator<Integer>> Iters){
+
+
+        Queue<newIter> minHeap = new PriorityQueue<newIter>();
+        AbstractList<Integer> result = new ArrayList<Integer>();
+        for(Iterator<Integer> iter : Iters){
+            if(iter.hasNext()){
+                minHeap.add(new newIter(iter.next(), iter));
+            }
+        }
+
+        while(!minHeap.isEmpty()){
+            newIter newiter = minHeap.poll();
+            result.add(newiter.getValue());
+            if(newiter.hasNext()){
+                minHeap.add(newiter);
+            }
+        }
+        return result;
+    }
+
+    class newIter implements Comparable<newIter>{
+        private Integer value;
+        private Iterator<Integer> iter;
+        public newIter(Integer val, Iterator<Integer> it){
+            this.value = val;
+            this.iter = it;
+        }
+        public Integer getValue(){
+            return this.value;
+        }
+        public boolean hasNext(){
+            if(iter.hasNext()){
+                value = iter.next();
+                return true;
+            }
+            return false;
+        }
+
+        public int compareTo(newIter a){
+            return value - a.getValue();
+        }
+    }
+}

@@ -1,0 +1,326 @@
+1. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=167364&pid=2358825&page=1&extra=#pid2358825
+ [面试经验] Google 11/13 onsite + 12/10加面 
+我原先是waive掉phone interview的，直接onsite。後來又被安排加面phone interview就是了...
+我的題目都是沒看過的，再次證明Google的題庫有多深，但還好大部份都不難，真是人品大爆發...
+
+11/13 Onsite
+第一面：感覺很愛數學的三哥
+第一題：證明題
+給一個2d平面(x及y值皆不為負)，如果x及y的值皆為integer，則稱為on-grid point，反之則稱為off-grid point。請證明給定任意四點on-grid points，一定至少會有兩個點的中點也是on-grid point。
+因為是第一面，太緊張，這題我花了應該15到20分鐘。
+
+第二題：
+input為一個非負整數，代表一個set {1, 2, 3, ...., n}。現在要將這個set分成兩份並滿足以下條件：
+a & b = None
+a | b = N
+也就是disjoint set，並且sum(a) == sum(b).
+求給定一個非負整數n，找出有多少個這樣的partition並回傳數量。
+這題還滿有趣的，大家可以想想怎麼解，我明天跟大家解釋我後來想的解法。
+
+必須要說，這位三哥人其實還滿好的，扣除他遲到15分鐘，還邊吃花生米邊面試我，考第二題這種難題還不給我完整時間還出一道不是很trivial的證明題之外，其實他很積極的參與我的解題過程，一直一直給我各種提示。第二題我跪得很慘，連解題的idea都還沒想出來就時間到了，但我想他應該沒給我很差的評分，所以我才有加面的機會，才能進而拿到offer。關於這點我還是得感謝他的。
+
+因為第一面跪得太慘，感覺就像我根本不會過了，所以後面有點自暴自棄，沒想到整個人都放鬆了，突然像是天生神力一樣，解題思路突然清晰起來。
+
+第二面：東亞大叔(SETI)
+因為我的recruiter給我的安排是同時面SWE跟SETI兩個位置，所以我有一個面試官是來自SETI。他開宗明義說只會出一題，大部份時間會花在討論如何做test。
+題目是merge interval變化題：
+給一個list，找出0 - 1000的missing interval(s) as string，然後回傳。
+
+題目很簡單，但是我想test cases有點卡卡的，但我想應該還可以，大家可以自己想想，是你們的話，會想到哪些test cases。提示：請以一個API designer的角度來想這個問題。
+一樣明天我會跟大家解釋我當天想的test cases有哪些。
+
+中午吃飯跟一個感覺像是amigo的SETI吃飯，他應該覺得很悶，因為我還籠罩在第一面的陰影XD  反正最後他跟我說，如果我ace其他三關，應該還是有機會。承您吉言，還真的是這樣。
+
+第三面：native妹妹(小弟我快要奔3惹，感覺她應該比我小)
+題目是給兩個string s and t，回傳在t裡面是否有子字串是s的anagram，也就是回傳true or false。
+很簡單對吧！！我是用two pointers + hash table，可是不知道為啥，妹妹一直聽不懂我的解法，害我花了將近20分鐘溝通解法，寫一寫就沒時間寫第二題惹。還好這面的影響不大....
+
+第四面：白人小哥
+OOD題！
+設計一個class來表達多項式，並且支援乘法e.g.: (5x^2 + 4x + 3) * (7x^2 + 2x + 1)，這樣的話前面的多項式跟後面的多項式分別都是一個class，然後要寫乘法的處理。
+一開始先設計只有一個變數的，然後寫完並且優化之後，要設計多個變數，e.g: 6x^2 + 7y + 1，然後再優化。
+這題我覺得挺好玩的，後來拿來問同學，他們好像不同意就是了...
+
+我還滿肯定第四面的白人小哥給我strong hire，因為他離開前有跟我說，I think you did a very good job there.
+
+本來都已經不抱希望了，但過了一週，recruiter突然寄信跟我說，他幫我送hc了！他幫我送hc了！他幫我送hc了
+因為當下很震驚，所以說三次。
+不過我的recruiter一直不肯跟我說我各個表現如何，只跟我說，you did a good enough job to make it to next stage.
+過了兩週，他又寄信過來跟我說，需要安排加面。這個時候我又問他，是我之前表現不好嗎？他還是不肯鬆口，只說，hc need to gather more data points to make decision。
+所以我又被安排電面惹.... 
+
+12/10 加面(phone interview)
+一面：聽起來是native小哥
+第一題忘了，但是我只記得，當下覺得，真的假的出這麼簡單？你在耍我？反正十分鐘左右秒殺。
+第二題：給一個list of strings，裡面是像12:25, 13:10之類的時間，要回傳一個pair，其時間間隔最小。sort之後又簡單解決。
+感覺小哥很想問到第三題...
+第三題是概念題，不用寫code，交流一下概念就行了。
+題目是給一堆websites，把他們按照語言分類。在分類前會給一堆paragraphs以及他們的label，也就是這個paragraph屬於哪個語言。
+我感覺他想考的是bag of words + KNN，但因為他出得有點怪，所以我最後給他的解法是類似TF-IDF的東西，沒丟進去KNN做分類。
+他後來好像也發現題目怪怪的，所以也沒有繼續討論怎麼引進classifier。
+
+二面：聽起來還是native小哥
+題目是給一個二維矩陣，代表的是一個色塊圖，以及起始點位置，視覺化大概像這樣：
+
+
+抱歉自己畫的，有點醜，但意思應該有到。
+
+求的是從這個起點，相鄰的同顏色塊的邊長。我大概花了超過五分鐘，才弄懂他說的那個英文字是邊長的意思，所以有人看到這邊的話，趕快去查邊長的英文是啥，別再跟我一樣犯傻！！
+以我的例子來說，第一個圖要回傳36，第二個圖要回傳8。
+這題有很多解法，我是用一個DFS就解決了。後來又花了十幾分鐘在討論test cases以及怎麼做input validation。
+
+只能說我太幸運了，加面的題目竟然這麼簡單。而且我隱隱約約有感覺到，兩個面試官都不知道我是加面的，第一個小哥還問我想去哪個組實習 XDDDDD
+也感謝兩個整學期都陪我每週mock interview的戰友，希望你們也都能拿到自己滿意的offer!
+
+下面是我去CU Google辦的workshop，googler解說的正確面試流程，希望對各位有所幫助：
+1. Don't jump into coding at once
+不要一出手就是程式碼，應該要follow以下步驟
+2. Define the problems. 
+最簡單的方式就是復述問題，讓面試官確認你懂題目的意思。但更重要的是，要「界定」問題。例如，有哪些東西你可以不用寫，像是如果問的是word ladder，available words要怎麼樣判斷？給的是一個資料結構的東西，還是一個function，之類的問題。
+3. Define todos of the problems
+承上，問完問題，確認需要寫的範圍之後，開始定義你需要的東西。例如palindrome系的題目，至少要有一個helper function: isPalindrome。最直接的定義方式就是說明你需要寫哪些helper functions，在這過程你還可以邊定義邊問說，我需要寫這部分嗎諸如此類。
+4. Define test cases, especially corner cases
+這個應該是最重要的部分，今天有個工程師說，不少Google的員工希望看到test-oriented programming。這似乎也佔了評分很重要的一部分，因為透過定義test cases以及定義corner cases，可以讓面試官評斷你對問題瞭解的程度，以及你思考邏輯的謹慎程度。
+5. Illustrate your algorithm.
+如果沒想到有效率的解法，先想brute-force怎麼解。然後，用剛剛定義好的test cases來描述你的解法。
+6. Coding with verbal communications
+這就沒啥好解釋的了，邊寫邊解釋。
+7. Run your codes with previous defined test cases
+寫完後，停頓一下，然後說，I think it would work, let's run with test cases。聽說這很重要，不要一寫完就跟人家說完成了 XD
+剩下的就是大略分析一下複雜度，如果有想到更好的解法，可以再去說明然後改進codes。
+
+
+
+
+补充内容 (2016-1-27 11:53):
+UPDATE: 加面第一面的第一題我想起來了，是iterator of iterators。也就是，寫一個class，在constructor會給list of iterators，寫兩個function：next(), hasNext()
+
+补充内容 (2016-1-28 07:03):
+更正：第一面第一題，是5個on-grid points!!!.
+
+补充内容 (2016-3-1 07:53):
+UPDATE: 加面第二面第一張圖的周長應該是28，我算錯了！！
+
+似乎沒什麼人討論呢，是因為題目太簡單了嗎 XDD
+
+關於第一面第二題set partitions，強烈建議先自己想想，如果實在想不出來再來看我這邊的解釋
+這題其實是set partitions的變形題，只是變形太多，所以會有點難連結到那邊.
+
+當input為n的時候，先計算summation of 1 to n，這個應該大家都會，套個數學公式就行了
+如果summation不是偶數，直接回傳0，不然的話，target sum就是summation / 2 
+接下來就是用0/1 knapsack的概念去建立lookup table就行了. 
+
+第二面的test cases，可以分為兩部分，valid & invalid input
+對於valid input，首先可以想到的，有empty list，list with only one element，duplicate elements，negative numbers elements，elements bigger than upper bound等等
+invalid input則是因為我是用Python，要考慮在非strong type language下的各種可能性
+各位可以參考各個module的source code裡面，他們怎麼做input validation的，例如scipy. 1
+
+
+2. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=183366&pid=2358817&page=1&extra=page%3D1%26filter%3Dsortid%26sortid%3D311#pid2358817
+
+
+第一轮:. 
+年轻三哥。
+1. 给一堆votes(candidate, timestamp)，问当前时刻T得票最高的人是谁。Follow up问得票最高的前K个人。
+2. 问一个字符串的任意permutation是不是回文，leetcode 266。. 
+
+第二轮：
+年长三哥。
+1. 数学题，不写代码。给5个在网格上的点（x，y坐标都是整数），求证5个点两两连线的中点必有一个在网格上（x，y坐标都是整数）。. 
+2. 给一个整数N，将集合S={1,2,3,...,N}分两个子集S1和S2，问使sum(S1) == sum(S2)的划分方法有多少个。类似subset，leetcode 90。
+
+
+午饭
+
+第三轮：
+发型诡异的日本大叔。
+Trapping Rain Water， leetcode 42。这轮代码写得有点儿懵逼。
+
+第四轮
+貌似是中国小哥，带白人小哥shadow。
+1. 给一个整数数组a，函数f(i)返回除a[i]外所有整数的乘积，求所有的f(i)。Follow up问不许用除法怎么做。
+2. 平面上一堆点，找两个点使由这两个点确定的直线平分剩余所有点。只说了下思路，并没有写代码。
+我的思路是先找到最下面的点P，然后根据其余点与P的连线和P所在水平线的夹角找中位点。又说了可能有共线的情况，小哥说不用考虑共线。不知道思路对不对。
+
+总之是面完了。希望4月8号之前给结果，不然要被迫从了Amazon了。
+顺便求问如何跟Amazon要deadline的extension。
+
+3. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=183346&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+
+ [面试经验] google 电面 挂经 
+
+第二轮电面跪经，面试官迟到7-8分钟。 说是手机找不到了。 大概聊了一下以前做的project，开始做题。题目是给你一个board，里面存储user的信息，user有id和socre。.
+board有adduser(id, score)(返回add进去的user当前的rank), findByRank(k) (这个返回id)。
+Add如果本身已经有id在board中，需要对这个id的score进行update。
+开始想的是用map加binary search中，中途脑子短路，写到一半发现似乎做不出来了。。。。(面完之后想想，这个方法应该是做的出来的。)
+面试官说应该要用binary search tree做，听到这里 基本就知道gg了。
+然后就是悲剧的开始，只会做binary search tree的添加点的操作，update和delete 操作基本忘干净了，不记得具体的步骤了。
+
+写代码的时候 struggle在了 delete 操作上，还有10分钟左右面试官说不用写了，就这样了。最后就是问一些问题了。
+
+4. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=176692&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+ [面试经验] google 3/7 新鲜跪经 
+
+这是g家给的一个二面的机会。楼主弱得跟猪一样，非常感谢推荐的师兄，浪费了师兄给的一次机会。不得不说g家hr真的很nice，全程回复及时，并且提醒什么的，非常感谢。
+
+10点非常准时收到白人小哥的电话，感觉小哥也很nice（虽然挂了）。小哥谷歌工作两年，讲题非常细致，讲题的时候语速故意放慢n倍。
+
+
+但是楼主仍然听不懂，听力太次了，小哥耐心讲解。题目感觉很简单（也可能是我想的很简单），目测已跪。
+
+下面上题：
+给你一个二维矩阵，返回一个矩阵根据左右对称反转的矩阵。这个矩阵由3个量表示：width，height，byte［］。
+例子：
+这样一个二维矩阵
+［［1，2，3］，
+  ［4，5，6］］
+
+
+表示为：
+width ＝ 3， height ＝ 2， byte［］ ＝ ｛1，2，3，4，5，6｝；
+
+然后求翻转后的一维矩阵。
+得到res［］ ＝ ｛3，2，1，6，5，4｝
+
+答完之后问了很多问题。比如walk through， 边界条件，什么地方可能出错，为什么会出错，解决方法。但是楼主感觉没理解小哥什么意思，所以乱答一通，小哥尴尬的笑。
+
+然后就是叫问问题。
+
+
+5.http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=147760&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+ [面试经验] Google电面 
+刚面的google电面，面的应该是国人，不知道是信号不好还是什么原因听的都不是很清楚，但是把我名字念准了，可能是免提？看了下简历，没有问什么，问了一下情况，选的SDE还是SETI，然后做题。
+第一题 ADD ONE。 简单讲了一下写了一下程序就过了。
+第二题，说给一个array，然后调一些加到新的array，头尾必须要，然后给你个条件，新的array里的2个元素之间差别尽可能接近10。
+LZ之前都在看其他题一看这题傻了，感觉只能brute force啊。。然后就写了个程序，时间也差不多到了，随便问了2个问题就结束了。
+求RP,求ONSITE。
+
+6.http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=148741&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+
+上次谷歌第一面，HR说还不能确定可不可以进入下一轮，所以加面一场，今天下午才面的。
+. 
+电话准时打来，估计是个欧洲小哥，面试流程有点反常，一开始就问我有没有什么问题要问的，我就只好把准备的几个问题给问了。
+
+然后进入coding环节，貌似是一道新题啊，我还没有在面经或者哪里看到过。
+
+函数签名为 int countChunk(String input)， 给定一个字符串，找出最多有多少个chunked palindrome,
+
+正常的palindrome是abccba, chunked palindrome的定义是：比如volvo, 可以把vo划分在一起，(vo) (l) (vo)，那么它是个palindrome。求实现返回最大的chunk 数量。
+
+大家有什么想法吗？一起来讨论讨论。
+我的想法是用DP做.
+
+        public static  int chunkNum(String s){
+                if(s == null || s.length() == 0){
+                        return 0;
+                }
+                int length = s.length();
+                int[][] DP = new int[length][length];
+                for(int i=length-1;i>=0;i--){
+                        for(int j=i;j<length;j++){
+                                if(i == j){
+                                        DP[i][j] = 1;
+                                }
+                                else{
+                                        int sum = 0;
+                                        int mid = i + (j-i) / 2;
+                                        for(int count=i;count<=mid;count++){
+                                                String pre = s.substring(i,count+1);
+                                                String post = s.substring(j-count+i,j+1);
+                                                if(pre.equals(post)){
+                                                        sum += DP[count+1][j-count+i-1];
+                                                }
+                                        }
+                                        DP[i][j] = sum;
+                                }
+                        }
+                }
+                return DP[0][length-1];
+        }
+
+
+
+
+7. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=179863&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+LZ选的Seattle position，准时收到电话，听声音像是个很nice的白人小哥。
+
+开场让我自我介绍，聊了个project，然后出题。
+
+题目：
+input 是一个游戏的后台log (可以自己定义结构)：
+（1） update log，每条记录是 (time, player, role)，比如 (2016 March 11 13:10 UTC, 'mark', 'knight')
+（2） play log，没条记录是（time，player），比如 (2016 March 12 12:10 UTC, 'mark')
+
+
+output是每个role出现的次数。
+
+面试过程：
+问清楚input&output，说input结构可以自己定义。我的回答是把所有update建一个 per-user map，update list按序存成数组。每次读play log，按player找到update list，然后binary search。时间NlogL， N是play log长度，L是per-user update list 的最大长度。
+快写完的时候，小哥说可以先不写binary search 容易错，我们先linear scan。。。小哥一直很nice应该不是BS我。。。写完给我提了一个小bug然后问了下test case。
+
+避免引起歧义解释下。。update表示某个时刻某个玩家切换了角色，play log表示某个时刻某个玩家登陆了游戏，也就是要用play log的时间找该玩家play 的role，然后统计次数，登陆一次就算一次
+再举个例：play log里有4条记录，mark 3条，jack 1条，mark玩过两次wizard一次knight (切换角色反应在update log里)，jack玩过一次wizard，所以wizard一共3次，knight一次
+
+总结：.
+自我介绍加聊project大概六七分钟的样子，clear question和说解法也是六七分钟，十五分钟边说边写完了之后，说完test cases就只有七八分钟了，小哥说差不多还是留几分钟那我们就进入提问环节吧。
+感觉写的速度一般，不快不慢，说话不够简洁浪费了点时间，都需要多练啊。。。求过！
+
+8. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=176228&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+一道常出现的面经题，拿出来讨论下自己设计接口，使得支持两个funciton：onUpdate(timestamp, price) 和 onCorrect(temistamp, price). 可以理解为有一个时间流，每一个timestamp都对应一个股票的时间，每次调用一次onUpdate的时候，就对我们设计的那个类更新对应的timestamp和price， onCorrect就是修改之前的一个timestamp的price。最后，我们的类要能返回latest price， max price 和 min price。一开始题目描述的太模糊了我都不知道到底要干啥，墨迹半天才知道是想设计一个类，然后中途也写的乱七八糟的，用了两个Deque来存储一个递增和一个递减的序列，类似窗口题的方法。当onCorrect的时候就去看队列里面有没有对应的timestamp，有的话移除然后重新入队。感觉这面面的也不是太好。”
+感觉应该是定义一个node class {timestamp, price}, 然后放入maxheap和min heap中吧，但是如果是用java的话，必须要用hash heap才可以吧，这样的话太麻烦了啊
+
+
+9. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=177612&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+上来聊简历聊了大约10多分钟。
+然后只问了一道题，给一个file，去除里面重复的行。我问了要不要preserve order，他说不用。就直接hashset做了。
+
+随后followup问了假如这个file很大怎么。 基本就是cc150里面external sort的原题。
+做完还剩10分钟左右，然后就让我问问题了，最后45分钟不到就结束了。
+和网上看到的其他google面经感觉风格不是很一样。
+
+10. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=147302&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+面试了很多家，google家的面试整体体验最好，每个环节都安排的特别合理，整个campus很大，很舒服。
+看了很多面经，下面和大家分享下面试的大概题目回馈大家的帮助，也希望能够帮助到大家，希望大家跟我一起祈福，祝我能拿到offer。
+我也有一个问题，我总共面试了5轮，第一轮，没答太好，答完时间到了，面试官说他不确定代码逻辑是否正确，这轮要是挂了，整个面试就算挂了？
+第二轮，答出了O(n)解法，然后面试官follow up O(logn), 一直在尝试，最后在他的提示下，想出来了，但是没时间写代码。后面三轮都答得非常好，原题和follow up都答出来了，面试官反馈特别好。但是因为第一轮，没写对，是不是就全挂了？大家有其中一轮没答好还得offer的吗？ 谢谢。
+
+下面是面试大概题目：
+第一轮： 给一个 M * N的screen，和一个String,比如“Hello World", 请问整个screen能放下多少个string。
+note: 如果有一个词在一行放不下，放到下一行。
+这一轮感觉就是纯的字符串处理。
+第二轮：给一个sorted array， 求出是否含有popular item。 popular item定义就是大于size的1/4。我给出了O（n)解法和代码。面试官follow up O(logn)。
+第三轮：flow water
+第四轮：给一个没排序的array，删除里面的duplicate，保留原来里面item的顺序。可能有多个重复的items。要O(n)解法
+第五轮：给一个String[] array, 和任意一个移动的window size k， 对array里的元素位置进行改变，使得window里的元素不重复. 要efficient的解法。 
+
+祝大家找工作顺利， good luck。
+
+11. http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=173970&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+ [面试经验] Google Intern 新鲜面筋 
+一般人家都是大神面完来发面筋。。。虽然感觉gg，但是平时也没少下别人面经。。唉，作为一只EEer也不指望什么，就造福下地里多几个面经，给自己后面找暑假实习攒人品～～
+约的电面，今天下午五点一场，六点一场。
+我真的很方很慌很不淡定啊。。
+第一轮： 中国面试官 ，电话很不清楚，弄的我有点方  Considering there are N engineers in one company with id from 1 to N, Each of the Engineer has a skill rate R_i, we want to select one group of engineering whose ids
+have to be continuous. The size of one group is the number of engineers in it and the skill rating of the group is the lowest rating of all the members in the group. Now given N and array R, for each group
+from size X from 1 to N, we want to know the highest skill rating of all the groups whose size is X.
+吭哧吭哧写暴力法，还出了bug，被提醒才差不多弄对，问了时间复杂度
+然后又要优化到n平方的复杂度，思路说对了，代码没来得及写完时间到了。。全程很方。。。脑子一片空白。。。
+第二轮： 印度面试官，开始让我自我介绍
+常规题：1. remove duplicate from an array
+一开始说了先sort再干啥干啥，问了时间复杂度，没让code
+然后说想想有别的方法没，脑抽了半天想到了hashset，问了时间复杂度，写了代码
+问问题：冷冻期真1 年么。。面试官也不太清楚好像
+2.given an array ranged from［0，N］，missing 了一个找出来。。
+继续脑抽。。说我能求和么。。然后问这个求和有啥问题，有可能和会overflow
+如果这个是sort的呢？
+结果人家都sort了。。突然脑抽想到那个什么b^b=0 不断xor的方法。。
+然后又问了还有啥更快的。。然后快到时间了。。
+问了问题：你们下班都有啥娱乐活动？
+小印度说这是个interesting question瀑布汗，内心OS：这啥人啊. 
+
+面完试就觉得。。刷题不在数量，我一看google doc白板脑子立刻忘光光，还是因为我第一次面试好紧张.....算是积攒了经验吧
+要改善的地方还很多，特别害怕内推的学长被举报，这推来的什么人啊
+
+12.http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=183437&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+
+ Considering there are N engineers in one company with id from 1 to N, Each of the Engineer has a skill rate R_i, we want to select one group of engineering whose ids have to be continuous. The size of one group is the number of engineers in it and the skill rating of the group is the lowest rating of all the members in the group. Now given N and array R, for each group from size X from 1 to N, we want to know the highest skill rating of all the groups whose size is X。 这个题感觉用heap来做的话. java普通的priorityqueue删除是O(n)的啊，如果要做到O(lgn),需要时hash heap啊，“we want to know the highest skill rating of all the groups whose size is X.”是说每个window中找最小值，然后求的是整个过程中的最大值. 如果用hash heap的话可以到O(nlgnk), 如果是普通的话是O(nk)

@@ -1,0 +1,38 @@
+
+/*Subset II
+如果有重复怎么做。我们先看没重复的 S=[1,2,3]. 可能的子集是 [], [1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]. 每一次遇到新元素，其实就是加到所有的已有的set里。比如当新元素是2， 那么就要加到[], [1]中，结果是[2],[1,2]。(上题的另一种解法) 如果有重复,那么就不能加入到已有的所有set里，而是只加入上一步生成的set里。比如如果不重复，当遇到新元素3，3要加入到所有已经生成的set中，也就是 [], [1],[2],[1,2]。 但是如果是重复的set S=[1,2,2],当遇到第二个2，就不能加所有的了因为[],[1]已经加过，只需要加上一步生成的,也就是[2],[1,2] */
+vector<vector<int> > subsetsWithDup(vector<int> &S) {
+        sort(S.begin(),S.end());
+        vector<int> tmp;
+        vector< vector<int> > res;
+        res.push_back(tmp);
+        tmp.push_back(S[0]);
+        res.push_back(tmp);
+        int pre=S[0];
+        int count=1;
+        for(int i=1;i<S.size();i++){
+         int sz=res.size();
+            if(S[i]!=S[i-1]){
+                count=0;
+                for(int j=0;j<sz;j++){
+ 
+                    tmp=res[j];
+                    tmp.push_back(S[i]);
+                    res.push_back(tmp);
+                    count++;
+                }
+            }
+            else{
+ 
+                for(int j=sz-count;j<sz;j++){
+ 
+                    tmp=res[j];
+                    tmp.push_back(S[i]);
+                    res.push_back(tmp);
+                    
+                }
+ 
+            }
+        }
+       return res;
+   }      

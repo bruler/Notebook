@@ -1,0 +1,6 @@
+Oct 25 2015
+Leet code brush.
+Order: brush leetcode by type.
+
+1. Array. 2 Tree. 3 Hashtable ..
+

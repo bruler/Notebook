@@ -1,0 +1,17 @@
+1 disjoint set http://web.rememberingemil.org/Projects/DisjointSets.aspx.html
+2. Kruskal http://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
+
+
+algorithm slides
+uva
+http://www.cs.virginia.edu/~luebke/cs332/
+
+penn state
+http://www.cse.psu.edu/~sofya/cse565/
+
+xi'an jiaotong
+http://cs.xidian.edu.cn/jpkc/Algorithm/
+
+hk ust
+
+https://www.cse.ust.hk/~dekai/271/
